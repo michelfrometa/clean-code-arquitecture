@@ -1,4 +1,4 @@
-package mskm.cleancode.application.dto.user;
+package mskm.cleancode.presentation.dto.example;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class CreateUserDto {
+public class CreateExampleDto {
 
     @NotBlank(message = "Username cannot be blank")
     private String username;

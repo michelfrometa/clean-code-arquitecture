@@ -11,17 +11,17 @@ import java.util.Optional;
 /**
  * Interface for persistence services, providing basic CRUD operations and additional methods for data retrieval.
  *
- * @param <T>  the type of entity being persisted
+ * @param <E>  the type of entity being persisted
  * @param <ID> the type of identifier for the entity
  */
-public interface IPersistenceService<T, ID> {
+public interface IPersistenceService<E, ID> {
 
     /**
      * Retrieves all entities of type T.
      *
      * @return a list of all entities
      */
-    List<T> findAll();
+    List<E> findAll();
 
     /**
      * Retrieves an entity of type T by its identifier.
@@ -29,7 +29,7 @@ public interface IPersistenceService<T, ID> {
      * @param id the identifier of the entity to retrieve
      * @return the entity with the specified identifier, or null if not found
      */
-    Optional<T> findById(ID id);
+    Optional<E> findById(ID id);
 
     /**
      * Saves an entity of type T.
@@ -37,7 +37,7 @@ public interface IPersistenceService<T, ID> {
      * @param entity the entity to save
      * @return the saved entity
      */
-    T save(T entity);
+    E save(E entity);
 
     /**
      * Deletes an entity of type T by its identifier.
@@ -51,7 +51,7 @@ public interface IPersistenceService<T, ID> {
      *
      * @param entity the entity to delete
      */
-    void delete(T entity);
+    void delete(E entity);
 
     /**
      * Retrieves all entities of type T, sorted by the specified sort criteria.
@@ -59,7 +59,7 @@ public interface IPersistenceService<T, ID> {
      * @param sort the sort criteria to apply
      * @return a list of all entities, sorted by the specified criteria
      */
-    List<T> findAll(Sort sort);
+    List<E> findAll(Sort sort);
 
     /**
      * Retrieves a page of entities of type T, based on the specified pageable criteria.
@@ -67,7 +67,7 @@ public interface IPersistenceService<T, ID> {
      * @param pageable the pageable criteria to apply
      * @return a page of entities, based on the specified criteria
      */
-    Page<T> findAll(Pageable pageable);
+    Page<E> findAll(Pageable pageable);
 
     /**
      * Retrieves all entities of type T that match the specified example.
@@ -75,7 +75,7 @@ public interface IPersistenceService<T, ID> {
      * @param example the example to match
      * @return a list of all entities that match the specified example
      */
-    List<T> findAllByExample(Example<T> example);
+    List<E> findAllByExample(Example<E> example);
 
     /**
      * Retrieves an entity of type T that matches the specified example, if one exists.
@@ -83,7 +83,7 @@ public interface IPersistenceService<T, ID> {
      * @param example the example to match
      * @return an optional entity that matches the specified example, or an empty optional if no match is found
      */
-    Optional<T> findOneByExample(Example<T> example);
+    Optional<E> findOneByExample(Example<E> example);
 
     /**
      * Returns the total count of entities of type T.
@@ -98,7 +98,7 @@ public interface IPersistenceService<T, ID> {
      * @param example the example to match
      * @return the total count of entities that match the specified example
      */
-    long count(Example<T> example);
+    long count(Example<E> example);
 
     /**
      * Returns whether an entity of type T with the specified identifier exists.
@@ -114,6 +114,6 @@ public interface IPersistenceService<T, ID> {
      * @param example the example to match
      * @return true if an entity that matches the specified example exists, false otherwise
      */
-    boolean existsByExample(Example<T> example);
+    boolean existsByExample(Example<E> example);
 
 }

@@ -13,15 +13,10 @@ import java.util.Optional;
 @Transactional
 public class UserPersistenceService extends MysqlPersistenceService<User, Long, mskm.cleancode.infraestructure.persistence.mysql.user.User,
         IUserRepositoryMysql> implements IUserRepository {
-    private final IDomainModelPersistenceModelMapper<User, mskm.cleancode.infraestructure.persistence.mysql.user.User> mapper;
-    private final IUserRepositoryMysql jpaRepository;
 
     public UserPersistenceService(IUserRepositoryMysql jpaRepository,
                                   IDomainModelPersistenceModelMapper<User, mskm.cleancode.infraestructure.persistence.mysql.user.User> mapper) {
         super(jpaRepository, mapper);
-        this.mapper = mapper;
-        this.jpaRepository = jpaRepository;
-
     }
 
     @Override

@@ -1,6 +1,5 @@
-package mskm.cleancode.application.dto.user;
+package mskm.cleancode.presentation.dto.user;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,10 +11,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class UpdateUserDto {
-
-    @NotBlank(message = "Id cannot be blank")
+public class UserDto {
     private Long id;
-
+    private String name;
+    private String username;
     private String password;
 }
