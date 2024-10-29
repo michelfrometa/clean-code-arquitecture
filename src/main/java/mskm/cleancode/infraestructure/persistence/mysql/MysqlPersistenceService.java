@@ -1,6 +1,7 @@
 package mskm.cleancode.infraestructure.persistence.mysql;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import mskm.cleancode.infraestructure.persistence.IDomainModelPersistenceModelMapper;
 import mskm.cleancode.infraestructure.persistence.IPersistenceService;
 import org.springframework.data.domain.Example;
@@ -13,17 +14,22 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Abstract base class for MySQL persistence services, providing basic CRUD operations
+ * and additional methods for data retrieval.
+ *
+ * @param <T>  the type of domain model
+ * @param <ID> the type of identifier for the entity
+ * @param <P>  the type of the persistence model
+ * @param <R>  the type of the JPA repository used for persistence
+ */
 @Transactional
+@RequiredArgsConstructor
 public abstract class MysqlPersistenceService<T, ID, P, R extends JpaRepository<P, ID>>
         implements IPersistenceService<T, ID> {
 
     protected final R jpaRepository;
     protected final IDomainModelPersistenceModelMapper<T, P> mapper;
-
-    public MysqlPersistenceService(R jpaRepository, IDomainModelPersistenceModelMapper<T, P> mapper) {
-        this.jpaRepository = jpaRepository;
-        this.mapper = mapper;
-    }
 
     @Override
     public T save(T example) {

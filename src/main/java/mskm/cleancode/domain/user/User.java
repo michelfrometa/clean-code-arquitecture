@@ -18,6 +18,7 @@ import java.util.Collection;
 @SuperBuilder
 public class User extends BaseEntity implements UserDetails {
 
+    private Long id;
     private String username;
     private String password;
 

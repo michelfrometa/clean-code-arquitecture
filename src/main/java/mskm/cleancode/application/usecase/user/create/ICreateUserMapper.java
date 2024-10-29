@@ -1,4 +1,4 @@
-package mskm.cleancode.application.usecase.user.mapper;
+package mskm.cleancode.application.usecase.user.create;
 
 import mskm.cleancode.application.dto.user.CreateUserDto;
 import mskm.cleancode.application.dto.user.UserDto;
@@ -12,8 +12,6 @@ import org.mapstruct.ReportingPolicy;
 
 @AnnotateWith(GeneratedMapper.class)
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
-public interface IUserMapper extends IEntityMapper<UserDto, User> {
-
-    User toEntity(CreateUserDto entity);
+public interface ICreateUserMapper extends IEntityMapper<CreateUserDto, UserDto, User> {
 
 }

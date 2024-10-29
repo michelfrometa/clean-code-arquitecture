@@ -9,25 +9,29 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Contract for a generic dto to entity mapper.
+ * Contract for an entity to a DTO mapper.
  *
- * @param <D> - DTO type parameter.
- * @param <E> - Entity type parameter.
+ * @param <CD> - Custom DTO type parameter.
+ * @param <D>  - General DTO type parameter(The one that contains all elements of the entity).
+ * @param <E>  - Domain Entity type parameter.
  */
-public interface IEntityMapper<D, E> {
-    E toEntity(D dto);
+public interface IEntityMapper<CD, D, E> {
 
-    D toDto(E entity);
+    E customDtoToEntity(CD source);
 
-    List<E> toEntity(List<D> dtoList);
+    E dtoToEntity(D source);
 
-    List<D> toDto(List<E> entityList);
+    D entityToDto(E source);
 
-    List<E> toEntity(Set<D> dtoList);
+    List<E> dtoListToEntityList(List<D> source);
 
-    List<D> toDto(Set<E> entityList);
+    List<D> entityListToDtoList(List<E> source);
+
+    Set<E> dtoSetToEntitySet(Set<D> source);
+
+    Set<D> entitySetToDtoSet(Set<E> source);
 
     @Named("partialUpdate")
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void partialUpdate(@MappingTarget E entity, D dto);
+    void partialUpdate(@MappingTarget E source, D dto);
 }
