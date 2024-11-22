@@ -1,7 +1,7 @@
 package mskm.cleancode.application.usecase.user;
 
-import mskm.cleancode.application.dto.user.CreateUserDto;
-import mskm.cleancode.application.dto.user.UserDto;
+import mskm.cleancode.presentation.dto.user.CreateUserDto;
+import mskm.cleancode.presentation.dto.user.UserDto;
 
 public interface IUserUseCaseService {
 

@@ -1,6 +1,5 @@
-package mskm.cleancode.application.dto.example;
+package mskm.cleancode.presentation.dto.example;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,11 +11,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class CreateExampleDto {
-
-    @NotBlank(message = "Username cannot be blank")
+public class GetExampleDto {
+    private Long id;
+    private String name;
     private String username;
-
-    @NotBlank(message = "Password cannot be blank")
     private String password;
 }

@@ -1,23 +1,18 @@
-package mskm.cleancode.domain;
+package mskm.cleancode.presentation.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import java.time.Instant;
+import mskm.cleancode.presentation.dto.BaseDto;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @SuperBuilder
-public abstract class BaseEntity<ID> {
+public class UpdateUserDto extends BaseDto<Long> {
 
-    private ID id;
-
-    private Instant createdDate;
-
-    private Instant modifiedDate;
+    private String password;
 }

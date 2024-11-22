@@ -1,9 +1,9 @@
-package mskm.cleancode.application.usecase.user.create;
+package mskm.cleancode.application.usecase.user.get;
 
 import mskm.cleancode.application.mapper.GeneratedMapper;
 import mskm.cleancode.application.mapper.IEntityMapper;
 import mskm.cleancode.domain.user.User;
-import mskm.cleancode.presentation.dto.user.CreateUserDto;
+import mskm.cleancode.presentation.dto.user.GetUserDto;
 import mskm.cleancode.presentation.dto.user.UserDto;
 import org.mapstruct.AnnotateWith;
 import org.mapstruct.BeanMapping;
@@ -17,7 +17,7 @@ import org.mapstruct.ReportingPolicy;
 
 @AnnotateWith(GeneratedMapper.class)
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
-public interface ICreateUserMapper extends IEntityMapper<CreateUserDto, UserDto, User> {
+public interface IGetUserMapper extends IEntityMapper<GetUserDto, UserDto, User> {
 
     @Named("partialUpdate")
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

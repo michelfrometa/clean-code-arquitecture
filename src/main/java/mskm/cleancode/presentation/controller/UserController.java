@@ -1,9 +1,9 @@
 package mskm.cleancode.presentation.controller;
 
 import lombok.RequiredArgsConstructor;
-import mskm.cleancode.application.dto.user.CreateUserDto;
-import mskm.cleancode.application.dto.user.UserDto;
 import mskm.cleancode.application.usecase.user.create.CreateUserUseCase;
+import mskm.cleancode.presentation.dto.user.CreateUserDto;
+import mskm.cleancode.presentation.dto.user.UserDto;
 import mskm.cleancode.presentation.output.ResponseDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,6 +22,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<ResponseDto<UserDto>> create(@ModelAttribute CreateUserDto dto) {
+
         return Optional.of(dto)
                 .map(createUserUseCase::execute)
                 .map(ResponseDto::new)

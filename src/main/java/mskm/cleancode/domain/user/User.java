@@ -16,7 +16,7 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class User extends BaseEntity implements UserDetails {
+public class User extends BaseEntity<Long> implements UserDetails {
 
     private Long id;
     private String username;

@@ -18,8 +18,12 @@ import java.util.List;
 @Getter
 @Setter
 public class ResponseDto<T> {
-    private boolean success;
+
+    @Builder.Default
+    private boolean success = true;
     private T data;
+
+    @Builder.Default
     private List<String> errors = new ArrayList<>();
 
     public ResponseDto(T data) {
