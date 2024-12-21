@@ -7,9 +7,10 @@ import mskm.cleancode.domain.BaseEntity;
 import mskm.cleancode.infraestructure.persistence.IPersistenceService;
 import mskm.cleancode.presentation.dto.BaseDto;
 
+import java.util.Optional;
+
 /**
- * Abstract class for a use case that encapsulates the create, read, update and
- * delete operations.
+ * Abstract class for a use case that encapsulates an update operation.
  *
  * @param <I>  the input dto type
  * @param <O>  the output dto type
@@ -33,7 +34,10 @@ public abstract class AbstractUpdateUseCase<I extends BaseDto<ID>, O, E extends 
 
     @Override
     protected E action(E source) {
-        return mapper.partialUpdate(this.find(source), source);
+        return Optional.ofNullable(source)
+                .map(this::find)
+                .map(found -> mapper.partialUpdate(found, source))
+                .orElse(source);
     }
 
     @Override

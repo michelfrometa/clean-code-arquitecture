@@ -8,11 +8,11 @@ import mskm.cleancode.presentation.dto.user.UserDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UpdateUserUseCase extends AbstractUpdateUseCase<UpdateUserDto, UserDto, User, Long, IUserRepository, IUpdateUserMapper, IUpdateUserValidator> {
+public class UpdateUserUseCase extends AbstractUpdateUseCase<UpdateUserDto, UserDto, User, Long, IUserRepository, IUpdateUserMapper, UpdateUserValidator> {
 
     public UpdateUserUseCase(IUserRepository repository,
                              IUpdateUserMapper mapper,
-                             IUpdateUserValidator validator) {
+                             UpdateUserValidator validator) {
         super(repository, mapper, validator);
     }
 }

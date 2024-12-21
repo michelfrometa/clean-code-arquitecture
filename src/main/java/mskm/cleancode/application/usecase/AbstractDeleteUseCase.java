@@ -9,8 +9,7 @@ import mskm.cleancode.infraestructure.persistence.IPersistenceService;
 import mskm.cleancode.presentation.dto.BaseDto;
 
 /**
- * Abstract class for a use case that encapsulates the create, read, update and
- * delete operations.
+ * Abstract class for a use case that encapsulates a delete operation.
  *
  * @param <I>  the input dto type
  * @param <O>  the output dto type

@@ -17,7 +17,7 @@ import java.util.Set;
  */
 public interface IEntityMapper<I, O, E> {
 
-    E customDtoToEntity(I source);
+    E inputDtoToEntity(I source);
 
     E dtoToEntity(O source);
 

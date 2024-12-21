@@ -5,6 +5,6 @@ import mskm.cleancode.presentation.dto.user.UpdateUserDto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class IUpdateUserValidator extends IValidator<UpdateUserDto> {
+public class UpdateUserValidator extends IValidator<UpdateUserDto> {
 
 }

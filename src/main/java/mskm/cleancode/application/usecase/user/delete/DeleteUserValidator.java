@@ -5,6 +5,6 @@ import mskm.cleancode.presentation.dto.user.GetUserDto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class IDeleteUserValidator extends IValidator<GetUserDto> {
+public class DeleteUserValidator extends IValidator<GetUserDto> {
 
 }

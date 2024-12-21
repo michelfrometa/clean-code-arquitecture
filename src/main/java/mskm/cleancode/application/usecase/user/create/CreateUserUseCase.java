@@ -8,13 +8,11 @@ import mskm.cleancode.presentation.dto.user.UserDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreateUserUseCase extends AbstractCreateUseCase<CreateUserDto, UserDto, User, Long, IUserRepository, ICreateUserMapper, ICreateUserValidator> {
-
-
+public class CreateUserUseCase extends AbstractCreateUseCase<CreateUserDto, UserDto, User, Long, IUserRepository, ICreateUserMapper, CreateUserValidator> {
 
     public CreateUserUseCase(IUserRepository repository,
                              ICreateUserMapper mapper,
-                             ICreateUserValidator validator) {
+                             CreateUserValidator validator) {
         super(repository, mapper, validator);
     }
 
