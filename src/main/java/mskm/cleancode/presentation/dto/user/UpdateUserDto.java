@@ -5,14 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import mskm.cleancode.presentation.dto.BaseDto;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @SuperBuilder
-public class UpdateUserDto extends BaseDto<Long> {
+public class UpdateUserDto extends GetUserDto {
 
     private String password;
 }

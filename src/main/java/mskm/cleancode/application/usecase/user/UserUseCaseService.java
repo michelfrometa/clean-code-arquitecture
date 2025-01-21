@@ -11,6 +11,8 @@ import mskm.cleancode.presentation.dto.user.UpdateUserDto;
 import mskm.cleancode.presentation.dto.user.UserDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserUseCaseService implements IUserUseCaseService {
@@ -20,6 +22,11 @@ public class UserUseCaseService implements IUserUseCaseService {
     private final UpdateUserUseCase updateUserUseCase;
     private final DeleteUserUseCase deleteUserUseCase;
 
+
+    @Override
+    public List<UserDto> filter(GetUserDto dto) {
+        return List.of();
+    }
 
     @Override
     public UserDto get(GetUserDto dto) {
